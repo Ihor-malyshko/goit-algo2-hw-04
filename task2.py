@@ -32,14 +32,38 @@ if __name__ == "__main__":
     for i, word in enumerate(words):
         trie.put(word, i)
 
-    # Перевірка кількості слів, що закінчуються на заданий суфікс
-    assert trie.count_words_with_suffix("e") == 1  # apple
-    assert trie.count_words_with_suffix("ion") == 1  # application
-    assert trie.count_words_with_suffix("a") == 1  # banana
-    assert trie.count_words_with_suffix("at") == 1  # cat
+    print("Перевірка кількості слів з суфіксом:")
+    result = trie.count_words_with_suffix("e")
+    print(f'  count_words_with_suffix("e") = {result}')
+    assert result == 1  # apple
+    
+    result = trie.count_words_with_suffix("ion")
+    print(f'  count_words_with_suffix("ion") = {result}')
+    assert result == 1  # application
+    
+    result = trie.count_words_with_suffix("a")
+    print(f'  count_words_with_suffix("a") = {result}')
+    assert result == 1  # banana
+    
+    result = trie.count_words_with_suffix("at")
+    print(f'  count_words_with_suffix("at") = {result}')
+    assert result == 1  # cat
 
-    # Перевірка наявності префікса
-    assert trie.has_prefix("app") == True  # apple, application
-    assert trie.has_prefix("bat") == False
-    assert trie.has_prefix("ban") == True  # banana
-    assert trie.has_prefix("ca") == True  # cat
+    print("\nПеревірка наявності префікса:")
+    result = trie.has_prefix("app")
+    print(f'  has_prefix("app") = {result}')
+    assert result == True  # apple, application
+    
+    result = trie.has_prefix("bat")
+    print(f'  has_prefix("bat") = {result}')
+    assert result == False
+    
+    result = trie.has_prefix("ban")
+    print(f'  has_prefix("ban") = {result}')
+    assert result == True  # banana
+    
+    result = trie.has_prefix("ca")
+    print(f'  has_prefix("ca") = {result}')
+    assert result == True  # cat
+    
+    print("\nВсі тести пройдено успішно!")
